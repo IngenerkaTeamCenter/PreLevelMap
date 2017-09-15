@@ -14,7 +14,8 @@ void drawRoad (Road r)
     txRectangle(r.x - 20, r.y - 20, r.x + 20, r.y + 20);
 };
 
-struct Wall {
+struct Wall
+{
     double x, y;
 };
 
@@ -70,19 +71,25 @@ void drawLevel(Level l)
         drawWall(l.walls[i]);
 }
 
-
 int main()
 {
     Level l0;
 
-//    char str[20];
-//    cout « "Введите номер уровня\n" « endl;
-//    cin » l;
+    char l[20];
+    cout << "Введите номер уровня\n";
+    cin >> l;
 
     txCreateWindow(800, 600);
     txBegin();
 
-    createLevel(l0, "level0.txt");
-    drawLevel(l0);
-//    destroyLevel(l0);
+    if (strcmp(l, "1") == 0)
+    {
+        createLevel(l0, "level0.txt");
+        drawLevel(l0);
+    }
+    else
+    {
+        createLevel(l0, "level1.txt");
+        drawLevel(l0);
+    }
 }
