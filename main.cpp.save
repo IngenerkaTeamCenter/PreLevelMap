@@ -71,34 +71,16 @@ void drawLevel(Level l)
         drawWall(l.walls[i]);
 }
 
-void levelstart(const char* coordX)
+void levelstart(string coordX)
 {
     txSetFillColor(TX_YELLOW);
-    if (strcmp(coordX, "1") == 0)
-    {
-        txCircle(180, 50, 30);
-        txTextOut(160, 4, "СТАРТ");
-    }
-    else
-    {
-        txCircle(380, 50, 30);
-        txTextOut(360, 4, "СТАРТ");
-    }
+    txCircle(180, 50, 30);
 }
 
-void levelfinish(const char* coordX)
+void levelfinish(string coordY)
 {
     txSetFillColor(TX_BLUE);
-    if (strcmp(coordX, "1") == 0)
-    {
-        txCircle(540, 10, 30);
-        txTextOut(520, 10, "ФИНИШ");
-    }
-    else
-    {
-        txCircle(240, 10, 30);
-        txTextOut(220, 10, "ФИНИШ");
-    }
+    txCircle(300, 200, 30)
 }
 
 int main()
@@ -108,14 +90,9 @@ int main()
     char l[20];
     cout << "Введите номер уровня\n";
     cin >> l;
-
     char start[20];
-    cout << "Введите точку старта\n";
+    cout << "Введите njxre cnfhnf\n";
     cin >> start;
-
-    char finish[20];
-    cout << "Введите точку финиша\n";
-    cin >> finish;
 
     txCreateWindow(800, 600);
     txBegin();
@@ -131,8 +108,8 @@ int main()
         drawLevel(l0);
     }
 
-    levelstart (start);
-    levelfinish (finish);
-
-    return 0;
+    if (strcmp(start, "1") == 0)
+    {
+        levelstart ("1");
+    }
 }
